@@ -26,9 +26,12 @@ export class App {
   }
 
   READ_tarefas() {
-    this.http.get<Tarefa[]>(`${this.apiURL}/api/getAll`).subscribe(
-      resultado => this.arrayDeTarefas.set(resultado));
-  }
+  this.http.get<Tarefa[]>(
+    `${this.apiURL}/api/getAll?nocache=${Date.now()}`
+  ).subscribe(
+    resultado => this.arrayDeTarefas.set(resultado)
+  );
+}
 
   DELETE_tarefas(tarefaAserRemovida: Tarefa) {
     var indice = this.arrayDeTarefas().indexOf(tarefaAserRemovida);
