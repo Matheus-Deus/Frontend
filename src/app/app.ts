@@ -12,10 +12,10 @@ export class App {
   protected readonly title = signal('TODOapp');
 
  arrayDeTarefas = signal<Tarefa[]>([]);
- apiURL : string;
+ apiURL : string = 'https://matheus-cavalcanti-255419.onrender.com';
 
   constructor(private http: HttpClient) {
-    this.apiURL = 'http://localhost:3000';
+    this.apiURL = 'https://matheus-cavalcanti-255419.onrender.com';
     this.READ_tarefas();
   }
 
